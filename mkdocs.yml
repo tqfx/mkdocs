@@ -6,85 +6,99 @@ site_author: author
 copyright: copyright
 # google_analytics:
 
-repo_name: 'GitHub'
+repo_name: GitHub
 repo_url: https://github.com/tqfx/mkdocs/
 remote_name: origin
 remote_branch: gh-pages
-edit_uri: 'edit/master/docs/'
+edit_uri: edit/master/docs/
 
 docs_dir: docs
 site_dir: site
-dev_addr: '127.0.0.1:8080'
+dev_addr: 127.0.0.1:8080
 
+#https://facelessuser.github.io/pymdown-extensions/extensions
 markdown_extensions:
-  - meta
   - toc:
       permalink: true
-
+  #https://squidfunk.github.io/mkdocs-material/reference/abbreviations
   - abbr              # *[TEXT]: ...
   - pymdownx.snippets # --8<--
-
+  #https://squidfunk.github.io/mkdocs-material/reference/admonitions
   - admonition            # !!! note "title"
   - pymdownx.details      # ??? note
   - pymdownx.superfences  # !!! note inline end
-
+  #https://squidfunk.github.io/mkdocs-material/reference/buttons
   - attr_list # [text](#){ .md-button }
-
+  #https://squidfunk.github.io/mkdocs-material/reference/code-blocks
   - pymdownx.inlinehilite # `#!c int`
   - pymdownx.highlight:   # ```
       linenums: false
       linenums_style: pymdownx.inline
-
-  - pymdownx.tabbed # ===
-
+  #https://squidfunk.github.io/mkdocs-material/reference/content-tabs
+  - pymdownx.tabbed: # ===
+      alternate_style: true
+  #https://squidfunk.github.io/mkdocs-material/reference/data-tables
+  - tables
+  #https://squidfunk.github.io/mkdocs-material/reference/footnotes
   - footnotes # [^1]
-
+  #https://squidfunk.github.io/mkdocs-material/reference/formatting
   - pymdownx.critic # {}
   - pymdownx.caret
+  - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.betterem:
       smart_enable: all
-
+  #https://squidfunk.github.io/mkdocs-material/reference/icons-emojis
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
+  #https://squidfunk.github.io/mkdocs-material/reference/images
+  - md_in_html
+  #https://squidfunk.github.io/mkdocs-material/reference/lists
   - def_list # - [x]
   - pymdownx.tasklist:
       custom_checkbox: false
       clickable_checkbox: false
-
+  #https://squidfunk.github.io/mkdocs-material/reference/mathjax
   - pymdownx.arithmatex: # $$
       generic: true
-
+  #https://squidfunk.github.io/mkdocs-material/reference/meta-tags
+  - meta
+  #https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions
   - pymdownx.smartsymbols
 
 # theme_dir:
 theme:
   name: material
   custom_dir: overrides
-  language: 'zh'
+  language: zh
   highlightjs: true
   logo:
   favicon:
-  icon:
+  icon: # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository-icon
     repo: fontawesome/brands/github
   features:
+    #https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigations
     - navigation.instant
+    - navigation.tracking
     - navigation.tabs
+    #https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search
+    - search.suggest
     - search.highlight
-    - header.autohide
+    - search.share
+    - header.autohide # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#automatic-hiding
+    - content.code.annotate
   palette:
-    # Light mode
-    - red: "(prefers-color-scheme: light)"
+    #Light mode
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-    # Dark mode
+    #Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
@@ -95,60 +109,64 @@ theme:
 
 plugins:
   - search
-  - git-revision-date
-  - with-pdf:
-      #author: site_author
-      #copyright: copyright
+  - git-revision-date # https://github.com/zhaoterryy/mkdocs-git-revision-date-plugin
+  - with-pdf: # https://github.com/orzih/mkdocs-with-pdf
+      # author: site_author
+      # copyright: copyright
       #
-      #cover: false
-      #back_cover: true
-      #cover_title: site_name
+      # cover: false
+      # back_cover: true
+      # cover_title: site_name
       cover_subtitle: subtitle
-      #cover_logo: None
+      # cover_logo: None
       #
       toc_title: 目录
-      #heading_shift: false
-      #toc_level: 3
-      #ordered_chapter_level: 2
+      # heading_shift: false
+      # toc_level: 3
+      # ordered_chapter_level: 2
       #
-      #render_js: true
-      #headless_chrome_path: chromedriver
+      render_js: true
+      headless_chrome_path: chromedriver
       #
       output_path: index.pdf
       enabled_if_env: ENABLE_PDF_EXPORT
-      #custom_template_path: TEMPLATES PATH
+      # custom_template_path: TEMPLATES PATH
       #
-      #debug_html: true
-      #show_anchors: true
-      #verbose: true
+      # debug_html: true
+      # show_anchors: true
+      # verbose: true
 
 extra:
+  #https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer
   generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/tqfx/
-  alternate:
-    # Switch to English
+  alternate: # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language
+    #Switch to English
     - name: English
       link: /en/
       lang: en
-  version:
+  version: # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning
     default: latest
 
 extra_css:
-#- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
   - css/default.css
 
 extra_javascript:
-# mathjax
-#- https://polyfill.io/v3/polyfill.min.js?features=es6
+  #mathjax
+  #https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#arithmatex
+  - javascripts/mathjax.js
+  # - https://polyfill.io/v3/polyfill.min.js?features=es6
   - javascripts/polyfill.js
-#- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/tex-mml-chtml.js
-# highlight
-#- https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
-  - javascripts/highlight.js
-# table
-#- https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  #table
+  # - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
   - javascripts/tables.js
-
+  #https://squidfunk.github.io/mkdocs-material/reference/data-tables/#sortable-tables
+  - javascripts/tablesort.js
+  #highlight
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - javascripts/highlight.js
