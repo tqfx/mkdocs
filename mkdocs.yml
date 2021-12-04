@@ -32,7 +32,6 @@ markdown_extensions:
   #https://squidfunk.github.io/mkdocs-material/reference/code-blocks
   - pymdownx.inlinehilite # `#!c int`
   - pymdownx.highlight:   # ```
-      auto_title: true
       linenums: false
       linenums_style: pymdownx.inline
   #https://squidfunk.github.io/mkdocs-material/reference/content-tabs
