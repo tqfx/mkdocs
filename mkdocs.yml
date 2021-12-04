@@ -32,6 +32,7 @@ markdown_extensions:
   #https://squidfunk.github.io/mkdocs-material/reference/code-blocks
   - pymdownx.inlinehilite # `#!c int`
   - pymdownx.highlight:   # ```
+      auto_title: true
       linenums: false
       linenums_style: pymdownx.inline
   #https://squidfunk.github.io/mkdocs-material/reference/content-tabs
@@ -71,9 +72,7 @@ markdown_extensions:
 # theme_dir:
 theme:
   name: material
-  custom_dir: overrides
   language: zh
-  highlightjs: true
   logo:
   favicon:
   icon: # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository-icon
@@ -87,7 +86,7 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
-    - header.autohide # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#automatic-hiding
+    - header.autohide
     - content.code.annotate
   palette:
     #Light mode
@@ -150,23 +149,13 @@ extra:
   version: # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning
     default: latest
 
-extra_css:
-  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
-  - css/default.css
-
 extra_javascript:
   #mathjax
   #https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#arithmatex
-  - javascripts/mathjax.js
-  # - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - javascripts/polyfill.js
-  # - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - javascripts/tex-mml-chtml.js
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   #table
-  # - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
-  - javascripts/tables.js
   #https://squidfunk.github.io/mkdocs-material/reference/data-tables/#sortable-tables
-  - javascripts/tablesort.js
-  #highlight
-  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
-  - javascripts/highlight.js
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - js/tablesort.js
