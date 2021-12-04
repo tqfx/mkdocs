@@ -126,7 +126,7 @@ plugins:
       # ordered_chapter_level: 2
       #
       render_js: true
-      headless_chrome_path: chromedriver
+      headless_chrome_path: chromium
       #
       output_path: index.pdf
       enabled_if_env: ENABLE_PDF_EXPORT
