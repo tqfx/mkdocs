@@ -3,11 +3,11 @@ site_name: name
 site_description: description
 site_author: author
 # site_favicon: favicon
-copyright: copyright
+copyright: copyright (c)
 # google_analytics:
 
 repo_name: GitHub
-repo_url: https://github.com/tqfx/mkdocs/
+repo_url: https://github.com/tqfx/mkdocs
 remote_name: origin
 remote_branch: gh-pages
 edit_uri: edit/master/docs/
@@ -43,14 +43,14 @@ markdown_extensions:
   - footnotes # [^1]
   #https://squidfunk.github.io/mkdocs-material/reference/formatting
   - pymdownx.critic # {}
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.betterem:
+  - pymdownx.caret  # ^
+  - pymdownx.keys   # +
+  - pymdownx.mark   # =
+  - pymdownx.tilde  # ~
+  - pymdownx.betterem: # *
       smart_enable: all
   #https://squidfunk.github.io/mkdocs-material/reference/icons-emojis
-  - pymdownx.emoji:
+  - pymdownx.emoji: # :smile:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   #https://squidfunk.github.io/mkdocs-material/reference/images
@@ -66,7 +66,7 @@ markdown_extensions:
   #https://squidfunk.github.io/mkdocs-material/reference/meta-tags
   - meta
   #https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions
-  - pymdownx.smartsymbols
+  - pymdownx.smartsymbols # (c)
 
 # theme_dir:
 theme:
@@ -81,11 +81,14 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
+    - navigation.top
     #https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search
     - search.suggest
     - search.highlight
     - search.share
+    #https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#automatic-hiding
     - header.autohide
+    #https://squidfunk.github.io/mkdocs-material/reference/code-blocks/?h=annotate#code-annotations
     - content.code.annotate
   palette:
     #Light mode
@@ -107,15 +110,16 @@ theme:
 
 plugins:
   - search
-  - git-revision-date # https://github.com/zhaoterryy/mkdocs-git-revision-date-plugin
+  - git-revision-date: # https://github.com/zhaoterryy/mkdocs-git-revision-date-plugin
+      enabled_if_env: CI # https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
   - with-pdf: # https://github.com/orzih/mkdocs-with-pdf
       # author: site_author
       # copyright: copyright
       #
-      # cover: false
-      # back_cover: true
+      # cover: false # a cover page
+      # back_cover: true # a back cover page
       # cover_title: site_name
-      cover_subtitle: subtitle
+      # cover_subtitle: None
       # cover_logo: None
       #
       toc_title: 目录
@@ -128,7 +132,6 @@ plugins:
       #
       output_path: index.pdf
       enabled_if_env: ENABLE_PDF_EXPORT
-      # custom_template_path: TEMPLATES PATH
       #
       # debug_html: true
       # show_anchors: true
@@ -139,7 +142,7 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/tqfx/
+      link: https://github.com/tqfx
   alternate: # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language
     #Switch to English
     - name: English
