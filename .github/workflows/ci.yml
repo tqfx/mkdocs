@@ -21,6 +21,7 @@ jobs:
       - run: |
           python3 -m mkdocs build -d build
         env:
+          CI: 1
           ENABLE_PDF_EXPORT: 1
       - uses: actions/upload-artifact@v2
         with:

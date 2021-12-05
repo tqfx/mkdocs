@@ -8,7 +8,7 @@ pages:
     - sudo apt-get install -f -y fonts-wqy-microhei chromium-driver
     - python3 -m pip install -U pip
     - python3 -m pip install -r requirements.txt
-    - ENABLE_PDF_EXPORT=1 python3 -m mkdocs build -d public
+    - CI=1 ENABLE_PDF_EXPORT=1 python3 -m mkdocs build -d public
   artifacts:
     paths:
       - public
