@@ -1,16 +1,15 @@
 site_name: name
-# site_url:
+site_url: https://tqfx.org/mkdocs
 site_description: description
 site_author: author
-# site_favicon: favicon
-copyright: copyright (c)
-# google_analytics:
+copyright: copyright &copy; tqfx
+google_analytics:
 
 repo_name: GitHub
 repo_url: https://github.com/tqfx/mkdocs
 remote_name: origin
 remote_branch: gh-pages
-edit_uri: edit/master/docs/
+edit_uri: blob/master/docs
 
 docs_dir: docs
 site_dir: site
@@ -72,8 +71,8 @@ markdown_extensions:
 theme:
   name: material
   language: zh
-  logo:
-  favicon:
+  logo: image/favicon.png
+  favicon: image/favicon.png
   icon: # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository-icon
     repo: fontawesome/brands/github
   features:
