@@ -118,8 +118,8 @@ plugins:
       # cover: false # a cover page
       # back_cover: true # a back cover page
       # cover_title: site_name
-      # cover_subtitle: None
-      # cover_logo: None
+      cover_subtitle: subtitle
+      cover_logo: image/favicon.png
       #
       toc_title: 目录
       # heading_shift: false
